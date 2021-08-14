@@ -70,10 +70,12 @@ def load_apa_data(data_path, encoder) :
     y_test = np.array(test_df['proximal_usage'].values).reshape(-1, 1)
 
     print("x_train.shape = " + str(x_train.shape))
-    print("x_test.shape = " + str(x_test.shape))
-
     print("y_train.shape = " + str(y_train.shape))
+    print("x_test.shape = " + str(x_test.shape))
     print("y_test.shape = " + str(y_test.shape))
+
+    print("x_train: ", x_train)
+    print("y_train: ", y_train)
     
     return x_train, y_train, x_test, y_test
 

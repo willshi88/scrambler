@@ -426,6 +426,8 @@ def load_scrambler_network(input_size_x, input_size_y, scrambler_mode='inclusion
         
         #Scale logits by importance scores
         scaled_logits = scale_logits([final_conv_out, onehot_to_logits(example_input)])
+        print("[_scrambler_func] final_conv_out: ", final_conv_out)
+        print("[_scrambler_func] scaled_logits: ", scaled_logits)
         
         return scaled_logits, final_conv_out
 
@@ -970,7 +972,7 @@ class Scrambler :
         
         input_tensors = group + x + drop + label
         
-        #Pad data
+        #Pad data ???
         n_pad = self.batch_size - x[0].shape[0] % self.batch_size
         if n_pad == self.batch_size :
             n_pad = 0
